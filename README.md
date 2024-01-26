@@ -34,7 +34,7 @@ The text in your report should not be more than 1,000 words. You may include up 
 
 - **reports/:**
   - figures/              # Visualizations and plots
-  - summary/              # Project summary reports or documentation
+  - documentation/              # Project summary reports or documentation
 
 - **requirements.txt:**
   - Python dependencies for the project
