@@ -21,7 +21,6 @@ The text in your report should not be more than 1,000 words. You may include up 
   - processed/            # Cleaned and preprocessed data
 
 - **notebooks/:**
-  - exploratory/          # Jupyter notebooks for exploratory data analysis
   - preprocessing/        # Jupyter notebooks for data preprocessing
   - modeling/             # Jupyter notebooks for model development
 
