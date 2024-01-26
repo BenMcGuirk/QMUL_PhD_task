@@ -15,7 +15,8 @@ def remove_outliers(data, contamination=0.05, random_state=None):
     - random_state (int or None): Random seed for reproducibility. Default is None.
 
     Returns:
-    - pd.DataFrame: DataFrame with outliers removed.
+    - pd.DataFrame: DataFrame with outliers removed (inliers).
+    - pd.DataFrame: DataFrame with the removed outliers.
     """
 
     # Create an Isolation Forest model
@@ -27,5 +28,5 @@ def remove_outliers(data, contamination=0.05, random_state=None):
     # Identify non-outliers (inliers)
     inliers_mask = outlier_preds == 1
 
-    # Return the DataFrame with outliers removed
-    return data[inliers_mask]
+    # Return both the DataFrame with outliers removed (inliers) and the removed outliers
+    return data[inliers_mask], data[~inliers_mask]
