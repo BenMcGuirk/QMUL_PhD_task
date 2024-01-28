@@ -2,7 +2,7 @@
 Gradient descent for logistic regression model
 """
 import numpy as np
-from modeling.logistic_regression.logistic_hypothesis_function import sigmoid
+from src.modelling.logistic_regression.logistic_hypothesis_function import sigmoid
 
 def logistic_gradient_descent(X, y, theta, alpha, num_iterations):
     m = len(y)

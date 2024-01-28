@@ -19,11 +19,19 @@ def normalize_data(data):
     if not isinstance(data, pd.DataFrame):
         raise ValueError("Input must be a pandas DataFrame.")
 
+    # Separate target variable (y) and features (X)
+    y_column = 'case'  # Target variable
+    X = data.drop(y_column, axis=1)
+    y = data[y_column]
+
     # Calculate mean and standard deviation for each column
-    mean_values = data.mean()
-    std_values = data.std()
+    mean_values = X.mean()
+    std_values = X.std()
 
     # Z-score normalize each column
-    normalized_data = (data - mean_values) / std_values
+    normalized_X = (X - mean_values) / std_values
+
+    # Add target variable back to the DataFrame
+    normalized_data = pd.concat([y, normalized_X], axis=1)
 
     return normalized_data

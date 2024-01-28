@@ -23,11 +23,16 @@ def remove_outliers(data, contamination=0.05, random_state=None):
     imputer = SimpleImputer(strategy='mean')
     data_imputed = pd.DataFrame(imputer.fit_transform(data), columns=data.columns)
 
+    # Separate target variable (y) and features (X)
+    y_column = 'case'  # Adjust with the actual column name for your target variable
+    X = data_imputed.drop(y_column, axis=1)
+    y = data_imputed[y_column]
+
     # Create an Isolation Forest model
     iso_forest = IsolationForest(contamination=contamination, random_state=random_state)
 
     # Fit the model and predict outliers
-    outlier_preds = iso_forest.fit_predict(data_imputed)
+    outlier_preds = iso_forest.fit_predict(X)
 
     # Identify outliers and inliers
     outliers = data[outlier_preds == -1]
