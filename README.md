@@ -26,7 +26,6 @@ The text in your report should not be more than 1,000 words. You may include up 
 
 - **src/:**
   - data_preprocessing/   # Python scripts/modules for data preprocessing
-  - modeling/             # Python scripts/modules for building and evaluating models
 
 - **reports/:**
   - figures/              # Visualizations and plots
