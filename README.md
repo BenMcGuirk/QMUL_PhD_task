@@ -28,9 +28,6 @@ The text in your report should not be more than 1,000 words. You may include up 
   - data_preprocessing/   # Python scripts/modules for data preprocessing
   - modeling/             # Python scripts/modules for building and evaluating models
 
-- **models/:**
-  - Trained model files or serialized objects
-
 - **reports/:**
   - figures/              # Visualizations and plots
   - documentation/              # Project summary reports or documentation
@@ -40,6 +37,3 @@ The text in your report should not be more than 1,000 words. You may include up 
 
 - **README.md:**
   - Project documentation
-
-- **main.py:**
-  - Main script to execute the entire pipeline
